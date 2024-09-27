@@ -12,6 +12,5 @@ int main(int argc, char *argv[]){
         int randomNumber = randomizingNum(maxVal, minVal);
         collatzingUntilOne(randomNumber);
     }
-
     return 0;
 }
