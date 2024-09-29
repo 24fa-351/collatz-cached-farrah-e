@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include "where_collatz_is.h"
 
 typedef struct {
     unsigned long long int randomNum;
@@ -7,23 +8,32 @@ typedef struct {
     unsigned long long int timesUsed;
 } LRUEntryValues;
 
-unsigned long long int gettingOrPutting(int cacheSize, unsigned long long int randomNum){
-    // for (int i = 0 ; i <= cacheSize; i++){
-    //     //if rnum is there, return val
-    //     //else add to cache
-    // }
-}
-
-void makingSpace(){
-    // subtract least used data
-}
-
-unsigned long long int LRUCaching(int cacheSize, unsigned long long int randomNum){
+int LRUCaching(int cacheSize, unsigned long long int randomNum){
     LRUEntryValues cacheArray[cacheSize];
-    //check if array is full
-    if (&cacheArray[cacheSize-1] != 0) gettingOrPutting(cacheSize, randomNum);
-    else makingSpace();
-
+    int currentEmptyIndex = 0;
+    int indexLeastUsed = 0;
+    if (&cacheArray[cacheSize-1].numOfIterations != 0){
+     for (int i = 0 ; i <= cacheSize; i++){
+        if(cacheArray[i].randomNum = randomNum){
+            cacheArray[i].timesUsed ++;
+            return cacheArray[i].numOfIterations;
+        }
+     }
+    cacheArray[currentEmptyIndex].randomNum=randomNum;
+    cacheArray[currentEmptyIndex].numOfIterations=collatzingUntilOne(randomNum);
+    cacheArray[currentEmptyIndex].timesUsed=0; 
+    currentEmptyIndex++;
+    return cacheArray[currentEmptyIndex].numOfIterations;
+    }
+    else{
+     for (int i = 0 ; i <= cacheSize; i++){
+        if(cacheArray[i].timesUsed < cacheArray[indexLeastUsed].timesUsed){
+            indexLeastUsed = i;
+        }
+     }
+     cacheArray[currentEmptyIndex].numOfIterations = 0;
+     currentEmptyIndex--;
+    }
 }
 
 
