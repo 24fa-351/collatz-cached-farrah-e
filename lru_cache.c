@@ -12,7 +12,7 @@ int LRUCaching(int cacheSize, unsigned long long int randomNum){
     LRUEntryValues cacheArray[cacheSize];
     int currentEmptyIndex = 0;
     int indexLeastUsed = 0;
-    if (&cacheArray[cacheSize-1].numOfIterations != 0){
+    if (&cacheArray[cacheSize-1].numOfIterations == 0){
      for (int i = 0 ; i <= cacheSize; i++){
         if(cacheArray[i].randomNum = randomNum){
             cacheArray[i].timesUsed ++;

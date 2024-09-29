@@ -3,6 +3,7 @@
 #include <string.h>
 #include "where_collatz_is.h"
 #include "lru_cache.h"
+#include "fifo_cache.h"
 
 int main(int argc, char *argv[]){
     int N = atoi(argv[1]);
