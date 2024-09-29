@@ -2,6 +2,6 @@
 #define wherethecollatzis_H
 
 
-int randomizingNum(int max, int min);
-int collatzingUntilOne(int randomNum);
+unsigned long long int randomizingNum(int max, int min);
+int collatzingUntilOne(unsigned long long int randomNum);
 #endif
