@@ -14,9 +14,15 @@ unsigned long long int gettingOrPutting(int cacheSize, unsigned long long int ra
     // }
 }
 
+void makingSpace(){
+    // subtract least used data
+}
+
 unsigned long long int LRUCaching(int cacheSize, unsigned long long int randomNum){
     LRUEntryValues cacheArray[cacheSize];
     //check if array is full
+    if (&cacheArray[cacheSize-1] != 0) gettingOrPutting(cacheSize, randomNum);
+    else makingSpace();
 
 }
 
