@@ -3,11 +3,11 @@
 #include "where_collatz_is.h"
 
 unsigned long long int randomizingNum(int max, int min){
-    return rand() % (max-min+1) + min;
+    return rand() % (max-min) + min;
 }
-int collatzingUntilOne(unsigned long long int randomNum){
+unsigned long long int collatzingUntilOne(unsigned long long int randomNum){
 unsigned long long int collatz = randomNum;
-int iteration = 0;
+unsigned long long int iteration = 0;
 while (collatz !=  1){
     iteration ++;
     if (collatz % 2 == 0) collatz = collatz/2;

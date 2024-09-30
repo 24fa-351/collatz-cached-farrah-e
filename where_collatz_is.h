@@ -3,5 +3,5 @@
 
 
 unsigned long long int randomizingNum(int max, int min);
-int collatzingUntilOne(unsigned long long int randomNum);
+unsigned long long int collatzingUntilOne(unsigned long long int randomNum);
 #endif
