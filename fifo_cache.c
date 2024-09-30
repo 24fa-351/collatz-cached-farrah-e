@@ -41,7 +41,7 @@ unsigned long long int FIFOCaching(int cacheSize, unsigned long long int randomN
         return FIFOCaching(cacheSize, randomNum);
     }
 }
-int FIFOCacheHit(){
-    return currentVals.fifocacheHit;
+double FIFOCacheHit(int numOfIteration){
+    return currentVals.fifocacheHit / numOfIteration;
 }
 

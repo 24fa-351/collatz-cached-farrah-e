@@ -19,7 +19,7 @@ unsigned long long int LRUCaching(int cacheSize, unsigned long long int randomNu
     }
     if (cacheArray[cacheSize-1].numOfIterations != 0){
       for (int i = 0 ; i <= currentEmptyIndex; i++){
-        if(cacheArray[i].randomNum = randomNum){
+        if(cacheArray[i].randomNum == randomNum){
             cacheArray[i].timesUsed ++;
             cacheHit++;
             return cacheArray[i].numOfIterations;
@@ -43,8 +43,8 @@ unsigned long long int LRUCaching(int cacheSize, unsigned long long int randomNu
     }
 }
 
-int LRUCacheHit(){
-    return cacheHit;
+double LRUCacheHit(int iteration){
+    return cacheHit/iteration;
 }
 
 
